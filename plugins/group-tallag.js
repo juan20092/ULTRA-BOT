@@ -1,6 +1,8 @@
+import fetch from 'node-fetch'
+
 const handler = async (m, { conn, args, participants }) => {
   let chat = global.db.data.chats[m.chat]
-  let emoji = chat?.emojiTag || '┆➥'
+  let emoji = chat?.emojiTag || '⟆⟆'
 
   const countryFlags = {
     '1':'🇺🇸','7':'🇷🇺','20':'🇪🇬','27':'🇿🇦','30':'🇬🇷','31':'🇳🇱','32':'🇧🇪','33':'🇫🇷','34':'🇪🇸','36':'🇭🇺','39':'🇮🇹',
@@ -44,6 +46,21 @@ const handler = async (m, { conn, args, participants }) => {
     react: { text: '🔊', key: m.key }
   })
 
+  const fixedImage = 'https://files.catbox.moe/oxpead.jpg'
+  const thumb = await (await fetch(fixedImage)).buffer()
+
+  const fkontak = {
+    key: { participants: '0@s.whatsapp.net', remoteJid: 'status@broadcast', fromMe: false, id: '𝕵𝑰𝑹𝑬𝑵 𝕭𝑶𝑻' },
+    message: {
+      locationMessage: {
+        name: 'INVOCACIÓN GENERAL',
+        jpegThumbnail: thumb,
+        vcard: `BEGIN:VCARD\nVERSION:3.0\nN:Meliodas;;;;\nFN:Meliodas\nORG:Boar Hat\nTITLE:Demon King\nitem1.TEL;waid=0000000000:+0 000-000-0000\nitem1.X-ABLabel:Oficial\nX-WA-BIZ-DESCRIPTION:Comandante de los Siete Pecados Capitales\nX-WA-BIZ-NAME:Meliodas\nEND:VCARD`
+      }
+    },
+    participant: '0@s.whatsapp.net'
+  }
+
   let teks = `*!  MENCION GENERAL  !*\n*PARA ${participants.length} MIEMBROS* 🔊\n\n`
 
   for (const p of participants) {
@@ -58,7 +75,7 @@ const handler = async (m, { conn, args, participants }) => {
       text: teks,
       mentions: participants.map(p => p.jid || p.id)
     },
-    { quoted: m }
+    { quoted: fkontak }
   )
 }
 
