@@ -24,10 +24,10 @@ global.prems = []
 
 global.emoji = '🕳'
 global.emoji2 = '🔊'
-global.namebot = '𝐔𝐋𝐓𝐑𝐀 𝐁𝐎𝐓 🔊'
-global.botname = '𝐔𝐋𝐓𝐑𝐀 𝐁𝐎𝐓 🔊'
+global.namebot = '⋆˚࿔ 𝐔𝐋𝐓𝐑𝐀 𝐁𝐎𝐓 𝜗𝜚˚⋆'
+global.botname = '⋆˚࿔ 𝐔𝐋𝐓𝐑𝐀 𝐁𝐎𝐓 𝜗𝜚˚⋆'
 global.banner = 'https://files.catbox.moe/1ruf7n.jpg'
-global.packname = '𝐔𝐋𝐓𝐑𝐀 𝐁𝐎𝐓 🔊'
+global.packname = '⋆˚࿔ 𝐔𝐋𝐓𝐑𝐀 𝐁𝐎𝐓 𝜗𝜚˚⋆'
 global.author = '© 𝐂𝐫𝐞𝐚𝐝𝐨 𝐏𝐨𝐫 𝔍𝒖𝒂𝒏 𒀭'
 global.sessions = 'Ultrabots'
 
